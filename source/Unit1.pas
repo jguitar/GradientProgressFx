@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, ExtCtrls, UGradientEffect;
+  Dialogs, StdCtrls, ExtCtrls, UGradientProgressFx;
 
 type
   TForm1 = class(TForm)
@@ -15,7 +15,7 @@ type
     procedure Timer1Timer(Sender: TObject);
     procedure CheckBox1Click(Sender: TObject);
   private
-    FGradient: TGradientEffect;
+    FGradient: TGradientProgressFx;
   end;
 
 var
@@ -37,7 +37,7 @@ procedure TForm1.FormCreate(Sender: TObject);
 begin
   Timer1.Enabled := False;
   Timer1.Interval := 30;
-  FGradient := TGradientEffect.Create(Canvas, clRed, clLime, Width)
+  FGradient := TGradientProgressFx.Create(Canvas, clRed, clLime, Width)
 end;
 
 procedure TForm1.FormDestroy(Sender: TObject);

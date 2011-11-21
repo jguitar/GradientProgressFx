@@ -1,4 +1,4 @@
-unit UGradientEffect;
+unit UGradientProgressFx;
 
 interface
 
@@ -6,7 +6,7 @@ uses
   Graphics, Windows;
 
 type
-  TGradientEffect = class(TObject)
+  TGradientProgressFx = class(TObject)
   private
     R1, R2, G1, G2, B1, B2: Byte;
     R, G, B: Extended;
@@ -36,7 +36,7 @@ uses
 
 { TGradientEffect }
 
-constructor TGradientEffect.Create(ACanvas: TCanvas; const AStartColor,
+constructor TGradientProgressFx.Create(ACanvas: TCanvas; const AStartColor,
   AEndColor: TColor; const AWidth: Integer);
 begin
   inherited Create;
@@ -49,7 +49,7 @@ begin
   SetData;
 end;
 
-function TGradientEffect.GetColorOffset(AOffset: Integer): TColor;
+function TGradientProgressFx.GetColorOffset(AOffset: Integer): TColor;
 begin
   Result :=
     RGB(R1 + Ceil(R * AOffset),
@@ -57,7 +57,7 @@ begin
         B1 + Ceil(B * AOffset));
 end;
 
-procedure TGradientEffect.Paint;
+procedure TGradientProgressFx.Paint;
 var
   i: Integer;
   j: Integer;
@@ -91,7 +91,7 @@ begin
   end; 
 end;
 
-procedure TGradientEffect.SetData;
+procedure TGradientProgressFx.SetData;
 begin
   R1 := GetRValue(FStartColor);
   G1 := GetGValue(FStartColor);
@@ -106,7 +106,7 @@ begin
   B := (B2 - B1) / FWidth;
 end;
 
-procedure TGradientEffect.Turn;
+procedure TGradientProgressFx.Turn;
 var
   c: TColor;
 begin

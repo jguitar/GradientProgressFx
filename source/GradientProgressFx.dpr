@@ -1,9 +1,9 @@
-program GradientEffect;
+program GradientProgressFx;
 
 uses
   Forms,
   Unit1 in 'Unit1.pas' {Form1},
-  UGradientEffect in 'UGradientEffect.pas';
+  UGradientProgressFx in 'UGradientProgressFx.pas';
 
 {$R *.res}
 
